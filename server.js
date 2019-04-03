@@ -11,7 +11,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
     extended: false,

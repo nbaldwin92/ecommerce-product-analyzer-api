@@ -15,6 +15,7 @@ const rating = async url => {
   const nightmare = new Nightmare({ show: false });
   const link = url;
   if (url.includes('ebay')) {
+    console.log('Ebay');
     await nightmare
       .goto(link)
       .click('.reviews-header .sar-btn')
@@ -22,6 +23,7 @@ const rating = async url => {
       .evaluate(() => document.querySelector('body').innerHTML)
       .end()
       .then(async response => {
+        console.log('Scraping...');
         const reviews = await getEbayProductReviews(response);
         const safetyRating = await scamAlgorithm(reviews, flags);
         result.push(safetyRating);

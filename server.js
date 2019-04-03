@@ -20,19 +20,15 @@ app.use(
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-  res.send('Ack');
+  res.send('ACK');
 });
 
 app.get('/api/scraper', async (req, res) => {
-  // Call scraper functions
+  // Call servers
 
   const { url } = req.query;
 
-  res.write('<h1>Loading</h1>');
-
   const score = await scraper(url);
-
-  res.write(`<h1>Score: ${score.toString()}</h1>`);
 
   res.send(score.toString());
 

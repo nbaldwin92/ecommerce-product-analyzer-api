@@ -5,6 +5,12 @@ const scraper = require('./routes/api/scraper').rating;
 
 const app = express();
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://ecommerce-product-analyzer.herokuapp.com');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({

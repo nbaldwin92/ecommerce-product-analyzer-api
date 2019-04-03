@@ -9,7 +9,7 @@ const cheerio = require('cheerio');
 // https://www.ebay.com/itm/Dyson-DC39-Origin-Canister-Vacuum-Yellow-New/272647620945?_trkparms=pageci%3Abbb70dd5-2b1e-11e9-b85f-74dbd180d4f1%7Cparentrq%3Ac9d8e3561680a9c560ea5644ffccb79c%7Ciid%3A1#rwid
 
 const flags = ['the', 'fraud', 'corrupt', 'fraudulent', 'sjf'];
-
+console.log('We made it');
 const rating = async url => {
   const result = [];
   const nightmare = new Nightmare({ show: false });
